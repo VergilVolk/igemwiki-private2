@@ -22,3 +22,4 @@ export { HumanPractices } from "./human-practices.tsx";
 export { Education } from "./education.tsx";
 export { Inclusivity } from "./inclusivity.tsx";
 export { Sustainability } from "./sustainability.tsx";
+export { Attributions } from "./attributions.tsx";

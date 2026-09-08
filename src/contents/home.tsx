@@ -1,150 +1,32 @@
-import { Inspirations, InspirationLink } from "../components/Inspirations";
-
 export function Home() {
-  const links: InspirationLink[] = [
-    { year: 2025, teamName: "Brno Czech Republic", pageName: "" },
-    { year: 2025, teamName: "McGill", pageName: "" },
-    { year: 2025, teamName: "GreatBay-SCIE", pageName: "" },
-    { year: 2025, teamName: "EPFL", pageName: "" },
-    { year: 2025, teamName: "Heidelberg", pageName: "" },
-    { year: 2025, teamName: "Uprize-I", pageName: "" },
-    { year: 2025, teamName: "IZJU-China", pageName: "" },
-    { year: 2025, teamName: "Marburg", pageName: "" },
-    { year: 2025, teamName: "Munich", pageName: "" },
-    { year: 2025, teamName: "WageningenUR", pageName: "" },
-  ];
-
   return (
     <>
-      <div className="row">
-        <div className="col">
-          <h2>Essential First Steps</h2>
-          <hr />
-          <p>
-            Familiarize yourself with the official iGEM competition rules,
-            policies, and judging criteria:
+      <section className="home-intro row align-items-center g-5">
+        <div className="col-lg-6">
+          <p className="eyebrow">Phase-separating condensates</p>
+          <h2>A tiny vessel through the nuclear barrier.</h2>
+          <p className="lead-text">
+            NucleArk explores a nuclear delivery system based on phase-separating
+            condensates. The project focuses on the challenge of delivering
+            nucleic-acid cargo into slowly dividing cells.
           </p>
-          <ul>
-            <li>
-              Carefully review the{" "}
-              <a
-                href="https://teams.igem.org/go/deliverables/wiki"
-                target="_blank"
-              >
-                Wiki Requirements page
-              </a>{" "}
-              to ensure your wiki meets all necessary standards for judging and
-              awards.
-            </li>
-            <li>
-              Understand the criteria and required wiki pages for Gold, Silver,
-              and Bronze Medals on the{" "}
-              <a
-                href="https://competition.igem.org/judging/awards/medals"
-                target="_blank"
-              >
-                Medals page
-              </a>
-              .
-            </li>
-            <li>
-              Explore the various Project Awards and their corresponding wiki
-              requirements on the{" "}
-              <a
-                href="https://competition.igem.org/judging/awards/project"
-                target="_blank"
-              >
-                Project Awards Page
-              </a>
-              .
-            </li>
-            <li>
-              Discover the eligibility criteria and wiki requirements for
-              Special Awards on the{" "}
-              <a
-                href="https://competition.igem.org/judging/awards/special"
-                target="_blank"
-              >
-                Special Awards Page
-              </a>
-              .
-            </li>
-          </ul>
+          <a className="button-link" href="/description">Explore the project</a>
         </div>
-      </div>
-      <div className="row mt-4">
-        <div className="col">
-          <h2>Building Your Wiki</h2>
-          <hr />
-          <ul>
-            <li>
-              <b>Content First, Design Second</b>: Focus on clearly documenting
-              your project, research, and activities. Design can be refined
-              later.
-            </li>
-            <li>
-              <b>Navigation is Key</b>: Structure your wiki with clear and
-              intuitive navigation. Visitors should easily find information.
-            </li>
-            <li>
-              <b>Accessibility Matters</b>: Use readable fonts, appropriate
-              color contrast, and ensure your wiki is mobile-friendly.
-            </li>
-            <li>
-              <b>Media Optimization</b>: Compress images and videos to reduce
-              file sizes and improve loading times.
-            </li>
-            <li>
-              <b>Document Early & Often</b>: Start documenting your project from
-              day one. Don't wait until the Wiki Freeze.
-            </li>
-            <li>
-              <b>Prepare for Deadlines</b>: Stay up-to-date with important
-              deadlines and events by checking the{" "}
-              <a
-                href="https://competition.igem.org/about/calendar"
-                target="_blank"
-              >
-                iGEM Competition Calendar
-              </a>
-              .
-            </li>
-          </ul>
+        <div className="col-lg-6">
+          <div className="video-frame">
+            <iframe
+              src="https://video.igem.org/videos/embed/gof2hJXkHcuybs2ANY9euE"
+              title="NucleArk project promotion"
+              allow="fullscreen"
+            />
+          </div>
         </div>
-      </div>
-      <div className="row mt-4">
-        <div className="col-lg-8">
-          <h2>Tips for Success</h2>
-          <hr />
-          <ul>
-            <li>
-              <b>Clearly Define Your Project</b>: Explain your project's goals,
-              methodology, and expected outcomes in a clear and concise manner.
-            </li>
-            <li>
-              <b>Show Your Progress</b>: Regularly update your wiki with your
-              team's progress, experiments, and results.
-            </li>
-            <li>
-              <b>Engage Your Audience</b>: Consider your global audience and use
-              language that is accessible to everyone.
-            </li>
-            <li>
-              <b>Human Practices & Safety</b>: Thoroughly document your team's
-              human practices activities and safety considerations.
-            </li>
-            <li>
-              <b>Collaborate & Share</b>: Highlight collaborations with other
-              teams and institutions.
-            </li>
-            <li>
-              <b>Have Fun and Learn!</b> iGEM is a unique opportunity to learn,
-              grow, and contribute to synthetic biology.
-            </li>
-          </ul>
-        </div>
-        <Inspirations inspirationLinkList={links} />
-      </div>
+      </section>
+      <section className="home-grid row g-4">
+        <div className="col-md-4"><article className="info-card"><span>01</span><h3>Condense</h3><p>Use a light-responsive module to assemble proteins into localized condensates.</p></article></div>
+        <div className="col-md-4"><article className="info-card"><span>02</span><h3>Carry</h3><p>Use zinc-finger proteins to bind nucleic-acid cargo for delivery.</p></article></div>
+        <div className="col-md-4"><article className="info-card"><span>03</span><h3>Enter</h3><p>Pair the system with a nuclear localization sequence to explore nuclear delivery.</p></article></div>
+      </section>
     </>
   );
 }

@@ -1,14 +1,23 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import { getPathMapping, stringToSlug } from "../../utils";
 import { useEffect } from "react";
 import { Navbar } from "../../components/Navbar";
 import { Header } from "../../components/Header";
 import { NotFound } from "../../components/NotFound";
 import { Footer } from "../../components/Footer";
+import { SectionPending } from "../../components/SectionPending";
+
+const pendingPaths = new Set([
+  "/engineering", "/results", "/contribution", "/experiments", "/notebook",
+  "/measurement", "/alternative-platform", "/safety-and-security", "/software",
+  "/hardware", "/entrepreneurship", "/human-practices", "/education",
+  "/inclusivity", "/sustainability",
+]);
 
 const App = () => {
+  const routerLocation = useLocation();
   const pathMapping = getPathMapping();
   const currentPath =
     location.pathname
@@ -38,8 +47,8 @@ const App = () => {
               element={
                 <>
                   <Header title={title || ""} lead={lead || ""} />
-                  <div className="container">
-                    <Component />
+                  <div className="container page-shell" key={routerLocation.pathname}>
+                    {pendingPaths.has(path) ? <SectionPending /> : <Component />}
                   </div>
                 </>
               }
