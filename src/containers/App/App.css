@@ -3,9 +3,10 @@ body { padding-top: 72px; color: var(--ink); background: var(--paper); font-fami
 a { color: inherit; }
 .site-nav { min-height: 72px; background: rgba(251,250,246,.94); border-bottom: 1px solid rgba(24,32,39,.12); backdrop-filter: blur(16px); }
 .navbar-brand { display: flex; align-items: center; gap: .65rem; font-size: 1.15rem; font-weight: 800; letter-spacing: -.04em; }
-.brand-logo { width: 42px; height: 30px; object-fit: contain; object-position: left center; }
+.brand-logo { width: 178px; height: 44px; object-fit: cover; object-position: center; mix-blend-mode: multiply; }
 .left-aligned { margin-left: auto; }
 .nav-link, .dropdown-item { font-size: .88rem; font-weight: 600; }
+@media (min-width: 992px) { .site-nav .dropdown:hover > .dropdown-menu { display: block; margin-top: 0; } .site-nav .dropdown-toggle::after { display: none; } }
 .page-hero { position: relative; overflow: hidden; min-height: 330px; padding: 6.5rem 0 4rem; color: #fff; background: linear-gradient(122deg, var(--deep), var(--teal)); }
 .page-hero h1 { max-width: 850px; margin: 0; font-size: clamp(3.4rem, 8vw, 6.8rem); font-weight: 800; letter-spacing: -.075em; line-height: .89; }
 .page-hero .lead { max-width: 680px; margin: 1.3rem 0 0; color: rgba(255,255,255,.8); font-size: 1.15rem; }
@@ -14,6 +15,13 @@ a { color: inherit; }
 .hero-orbit { display: none; }
 .page-shell { min-height: 42vh; padding-top: 4.5rem; }
 .page-shell { animation: page-in .62s cubic-bezier(.22,.75,.25,1) both; }
+.home-page-shell { padding-top: 0; }
+.home-banner { position: relative; min-height: 310px; margin: 0 0 4.5rem; padding: 4.8rem max(5.5rem, calc((100vw - 1296px) / 2 + 1.5rem)); overflow: hidden; color: #fff; background: linear-gradient(120deg, var(--deep), var(--teal)); }
+.home-banner .eyebrow { color: #d3e4c9; }
+.home-banner h1 { position: relative; z-index: 1; margin: 0; font-size: clamp(4rem, 10vw, 8rem); font-weight: 800; letter-spacing: -.08em; line-height: .82; }
+.home-banner > p:not(.eyebrow) { position: relative; z-index: 1; max-width: 510px; margin: 1.5rem 0 0; color: rgba(255,255,255,.78); font-size: 1.08rem; line-height: 1.6; }
+.home-banner-mark { position: absolute; right: -3%; bottom: 10%; width: min(560px, 55%); height: 150px; object-fit: cover; object-position: center; filter: grayscale(1) invert(1); mix-blend-mode: screen; opacity: .54; }
+.home-content { padding-top: 0; }
 .home-intro { min-height: 440px; }
 .home-intro h2, .content-section h2, .section-pending h2 { max-width: 760px; font-size: clamp(2.25rem, 4vw, 4.2rem); font-weight: 800; letter-spacing: -.06em; line-height: .98; }
 .lead-text { max-width: 570px; color: var(--muted); font-size: 1.17rem; line-height: 1.75; }
@@ -56,4 +64,4 @@ tr:last-child td { border-bottom: 0; }
 .footer a { color: #fff; font-weight: 700; text-decoration: none; }
 .footer a:hover { color: #e0ab80; }
 @keyframes page-in { from { transform: translateY(22px); } to { transform: translateY(0); } }
-@media (max-width: 991px) { .page-hero { min-height: 280px; padding-top: 5rem; } .page-shell { padding-top: 3rem; } .hero-orbit-one { right: -60px; } }
+@media (max-width: 991px) { .page-hero { min-height: 280px; padding-top: 5rem; } .page-shell { padding-top: 3rem; } .home-page-shell { padding-top: 0; } .home-banner { min-height: 270px; padding: 3.5rem 2rem; } .home-banner-mark { right: -15%; width: 85%; opacity: .32; } }

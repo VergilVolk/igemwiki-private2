@@ -46,8 +46,8 @@ const App = () => {
               path={path}
               element={
                 <>
-                  <Header title={title || ""} lead={lead || ""} />
-                  <div className="container page-shell" key={routerLocation.pathname}>
+                  {path !== "/" && <Header title={title || ""} lead={lead || ""} />}
+                  <div className={path === "/" ? "page-shell home-page-shell" : "container page-shell"} key={routerLocation.pathname}>
                     {pendingPaths.has(path) ? <SectionPending /> : <Component />}
                   </div>
                 </>
