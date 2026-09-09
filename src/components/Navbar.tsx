@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import Pages from "../pages.ts";
 
 export function Navbar() {
+  const logoUrl = import.meta.env.VITE_TEAM_LOGO_URL;
   const pages = Pages.map((item, pageIndex) => {
     if ("folder" in item && item.folder) {
       const folderItems = item.folder.map((subpage, subpageIndex) => {
@@ -43,8 +44,7 @@ export function Navbar() {
     <BootstrapNavbar expand="lg" className="site-nav" fixed="top">
       <Container>
         <BootstrapNavbar.Brand as={Link} to="/">
-          <span className="brand-symbol">N</span>
-          <span>NucleArk</span>
+          {logoUrl ? <img className="brand-logo" src={logoUrl} alt="NucleArk logo" /> : <span>NucleArk</span>}
         </BootstrapNavbar.Brand>
         <BootstrapNavbar.Toggle aria-controls="basic-navbar-nav" />
         <BootstrapNavbar.Collapse id="basic-navbar-nav">

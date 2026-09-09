@@ -13,13 +13,7 @@ export function Home() {
           <a className="button-link" href="/description">Explore the project</a>
         </div>
         <div className="col-lg-6">
-          <div className="video-frame">
-            <iframe
-              src="https://video.igem.org/videos/embed/gof2hJXkHcuybs2ANY9euE"
-              title="NucleArk project promotion"
-              allow="fullscreen"
-            />
-          </div>
+          <HeroVideo />
         </div>
       </section>
       <section className="home-grid row g-4">
@@ -27,6 +21,15 @@ export function Home() {
         <div className="col-md-4"><article className="info-card"><span>02</span><h3>Carry</h3><p>Use zinc-finger proteins to bind nucleic-acid cargo for delivery.</p></article></div>
         <div className="col-md-4"><article className="info-card"><span>03</span><h3>Enter</h3><p>Pair the system with a nuclear localization sequence to explore nuclear delivery.</p></article></div>
       </section>
+      <section className="home-story row align-items-center g-5">
+        <div className="col-lg-5"><p className="eyebrow">NucleArk</p><h2>The vessel is the idea.</h2></div>
+        <div className="col-lg-7"><p className="lead-text">The project name places the condensate at the centre of the story: a small, controllable vessel designed to carry nucleic-acid cargo toward the nucleus. The team&apos;s logo will appear here once it has been uploaded to the iGEM asset service.</p></div>
+      </section>
+      <section className="home-model row g-4">
+        <div className="col-lg-7"><article className="feature-panel"><p className="eyebrow">Model preview</p><h2>Watch droplets form, change, and age.</h2><p>The dry-lab model studies phase separation, morphology across a parameter landscape, and a glassification-coupled virtual FRAP experiment.</p><a className="button-link" href="/model">Visit the model</a></article></div>
+        <div className="col-lg-5"><article className="feature-panel feature-panel-dark"><p className="eyebrow">Documentation</p><h3>Evidence before claims.</h3><p>Wet-lab methods and results will be added as reviewed records become available.</p></article></div>
+      </section>
     </>
   );
 }
+import { HeroVideo } from "../components/HeroVideo";
