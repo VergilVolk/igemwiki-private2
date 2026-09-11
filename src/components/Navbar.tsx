@@ -4,11 +4,12 @@ import BootstrapNavbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { Link } from "react-router-dom";
 import Pages from "../pages.ts";
+import nucleArkLogo from "../assets/nucleark-logo.png";
 
 export function Navbar() {
   const logoUrl =
     import.meta.env.VITE_TEAM_LOGO_URL ||
-    `${import.meta.env.BASE_URL}data/logo/7a78c898c4af6cad4707892637d2adde.png`;
+    nucleArkLogo;
   const pages = Pages.map((item, pageIndex) => {
     if ("folder" in item && item.folder) {
       const folderItems = item.folder.map((subpage, subpageIndex) => {

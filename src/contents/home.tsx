@@ -1,8 +1,9 @@
 import { HeroVideo } from "../components/HeroVideo";
+import nucleArkLogo from "../assets/nucleark-logo.png";
 
 const logoUrl =
   import.meta.env.VITE_TEAM_LOGO_URL ||
-  `${import.meta.env.BASE_URL}data/logo/7a78c898c4af6cad4707892637d2adde.png`;
+  nucleArkLogo;
 
 export function Home() {
   return (
