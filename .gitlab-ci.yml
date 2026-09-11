@@ -11,7 +11,7 @@ pages:
   before_script:
     - echo 'yarn-offline-mirror ".yarn-cache/"' >> .yarnrc
     - echo 'yarn-offline-mirror-pruning true' >> .yarnrc
-    - yarn install --frozen-lockfile
+    - yarn install --frozen-lockfile --non-interactive --prefer-offline --network-timeout 30000
   script:
     - yarn build
     - cp -a dist/. public/
