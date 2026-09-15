@@ -4,12 +4,8 @@ const students = [
 
 const advisors = ["Linshan Ye", "Mingyuan Yao", "XU XIN", "Yanpeng Song", "Zhefu Li"];
 
-const memberDescriptions: Record<string, string> = {
-  "Qushun Yang": "Our great wet lab leader.",
-};
-
 function MemberGrid({ names }: { names: string[] }) {
-  return <div className="member-grid">{names.map((name) => <article key={name} className="member-card"><div className="member-initial">{name.slice(0, 1)}</div><h3>{name}</h3><p>{memberDescriptions[name] ?? "Profile and contribution details will be added with member approval."}</p></article>)}</div>;
+  return <div className="member-grid">{names.map((name) => <article key={name} className="member-card"><div className="member-initial">{name.slice(0, 1)}</div><h3>{name}</h3><p>Profile and contribution details will be added with member approval.</p></article>)}</div>;
 }
 
 export function Members() {
