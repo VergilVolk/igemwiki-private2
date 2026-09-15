@@ -8,6 +8,7 @@ import { Header } from "../../components/Header";
 import { NotFound } from "../../components/NotFound";
 import { Footer } from "../../components/Footer";
 import { SectionPending } from "../../components/SectionPending";
+import { ScrollToTop } from "../../components/ScrollToTop";
 
 const pendingPaths = new Set([
   "/engineering", "/results", "/contribution", "/experiments", "/notebook",
@@ -34,6 +35,9 @@ const App = () => {
 
   return (
     <>
+      {/* Scroll to top on route change */}
+      <ScrollToTop />
+
       {/* Navigation */}
       <Navbar />
 

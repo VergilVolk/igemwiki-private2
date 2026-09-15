@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { HeroVideo } from "../components/HeroVideo";
 import nucleArkLogo from "../assets/nucleark-logo.png";
 
@@ -24,7 +25,7 @@ export function Home() {
             condensates. The project focuses on the challenge of delivering
             nucleic-acid cargo into slowly dividing cells.
           </p>
-          <a className="button-link" href="/description">Explore the project</a>
+          <Link className="button-link" to="/description">Explore the project</Link>
         </div>
         <div className="col-lg-6"><HeroVideo /></div>
       </section>
@@ -33,7 +34,7 @@ export function Home() {
         <div className="col-lg-7"><p className="lead-text">NucleArk places the condensate at the centre of the story: a small, controllable vessel designed to carry nucleic-acid cargo toward the nucleus.</p></div>
       </section>
       <section className="home-model row g-4">
-        <div className="col-lg-7"><article className="feature-panel"><p className="eyebrow">Model preview</p><h2>Watch droplets form, change, and age.</h2><p>The dry-lab model studies phase separation, morphology across a parameter landscape, and a glassification-coupled virtual FRAP experiment.</p><a className="button-link" href="/model">Visit the model</a></article></div>
+        <div className="col-lg-7"><article className="feature-panel"><p className="eyebrow">Model preview</p><h2>Watch droplets form, change, and age.</h2><p>The dry-lab model studies phase separation, morphology across a parameter landscape, and a glassification-coupled virtual FRAP experiment.</p><Link className="button-link" to="/model">Visit the model</Link></article></div>
         <div className="col-lg-5"><article className="feature-panel feature-panel-dark"><p className="eyebrow">Documentation</p><h3>Evidence before claims.</h3><p>Wet-lab methods and results will be added as reviewed records become available.</p></article></div>
       </section>
       </div>
