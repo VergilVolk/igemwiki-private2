@@ -14,6 +14,7 @@ export { AlternativePlatform } from "./alternative-platform.tsx";
 export { SafetyAndSecurity } from "./safety-and-security.tsx";
 // Dry Lab
 export { Model } from "./model.tsx";
+export { SequenceDesign } from "./sequence-design.tsx";
 export { Software } from "./software.tsx";
 export { Hardware } from "./hardware.tsx";
 // Engagement

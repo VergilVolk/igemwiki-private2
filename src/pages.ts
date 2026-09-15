@@ -2,7 +2,7 @@ import {
   AlternativePlatform, Attributions, Contribution, Description, Education,
   Engineering, Entrepreneurship, Experiments, Hardware, Home, HumanPractices,
   Inclusivity, Measurement, Members, Model, Notebook, Results,
-  SafetyAndSecurity, Software, Sustainability,
+  SafetyAndSecurity, SequenceDesign, Software, Sustainability,
 } from "./contents";
 
 interface Base { name: string | undefined; }
@@ -28,6 +28,7 @@ const Pages: (Page | Folder)[] = [
   ]},
   { name: "Dry Lab", folder: [
     { name: "Model", title: "Model", path: "/model", component: Model, lead: "A computational study of condensate formation and ageing." },
+    { name: "Sequence Design", title: "Sequence design", path: "/sequence-design", component: SequenceDesign, lead: "A CpG-free DNA tag the human genome does not contain, and the four-finger array that reads it." },
     { name: "Software", title: "Software", path: "/software", component: Software, lead: "" },
     { name: "Hardware", title: "Hardware", path: "/hardware", component: Hardware, lead: "" },
   ]},
