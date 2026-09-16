@@ -13,8 +13,9 @@ import { ScrollToTop } from "../../components/ScrollToTop";
 const pendingPaths = new Set([
   "/engineering", "/results", "/contribution", "/experiments", "/notebook",
   "/measurement", "/alternative-platform", "/safety-and-security", "/software",
-  "/hardware", "/entrepreneurship", "/human-practices", "/education",
-  "/inclusivity", "/sustainability",
+  "/hardware", "/model/membrane-nuclear-entry",
+  "/model/structure-binding-prediction", "/entrepreneurship",
+  "/human-practices", "/education", "/inclusivity", "/sustainability",
 ]);
 
 const App = () => {
@@ -52,7 +53,17 @@ const App = () => {
                 <>
                   {path !== "/" && <Header title={title || ""} lead={lead || ""} />}
                   <div className={path === "/" ? "page-shell home-page-shell" : "container page-shell"} key={routerLocation.pathname}>
-                    {pendingPaths.has(path) ? <SectionPending /> : <Component />}
+                    {pendingPaths.has(path) ? (
+                      <SectionPending>
+                        {path === "/hardware" && (
+                          <p className="text-center text-body-secondary mt-3">
+                            Do we really have hardware ?
+                          </p>
+                        )}
+                      </SectionPending>
+                    ) : (
+                      <Component />
+                    )}
                   </div>
                 </>
               }

@@ -6,32 +6,56 @@ import { Link } from "react-router-dom";
 import Pages from "../pages.ts";
 import nucleArkLogo from "../assets/nucleark-logo.png";
 
+type NavItem = (typeof Pages)[number];
+
 export function Navbar() {
   const logoUrl =
     import.meta.env.VITE_TEAM_LOGO_URL ||
     nucleArkLogo;
+
+  // Renders folder entries (pages and nested folders) inside a dropdown menu.
+  const renderFolderItems = (
+    items: NavItem[] | undefined,
+    keyPrefix: string,
+  ) => {
+    if (!items) return null;
+    return items.map((item, itemIndex) => {
+      if ("folder" in item && item.folder) {
+        return (
+          <NavDropdown
+            key={`${keyPrefix}-${itemIndex}`}
+            title={item.name}
+            id={`${keyPrefix}-${itemIndex}`}
+            drop="end"
+          >
+            {renderFolderItems(item.folder, `${keyPrefix}-${itemIndex}`)}
+          </NavDropdown>
+        );
+      }
+      if ("path" in item && item.path) {
+        return (
+          <NavDropdown.Item
+            key={`${keyPrefix}-${itemIndex}`}
+            as={Link}
+            to={item.path}
+            className={item.indent ? "subpage-item" : undefined}
+          >
+            {item.name}
+          </NavDropdown.Item>
+        );
+      }
+    });
+  };
+
   const pages = Pages.map((item, pageIndex) => {
     if ("folder" in item && item.folder) {
-      const folderItems = item.folder.map((subpage, subpageIndex) => {
-        if (subpage.path) {
-          return (
-            <NavDropdown.Item
-              key={`subpage-${pageIndex}-${subpageIndex}`}
-              as={Link}
-              to={subpage.path}
-            >
-              {subpage.name}
-            </NavDropdown.Item>
-          );
-        }
-      });
       return (
         <NavDropdown
           key={`page-${pageIndex}`}
           title={item.name}
           id={`page-${pageIndex}`}
         >
-          {folderItems}
+          {renderFolderItems(item.folder, `page-${pageIndex}`)}
         </NavDropdown>
       );
     } else if ("path" in item && item.path) {

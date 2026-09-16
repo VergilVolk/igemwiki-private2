@@ -1,33 +1,67 @@
-const parameterRows = [
-  ["mean", "0.1–1.0", "Initial uniform concentration; controls rich-phase volume fraction."],
-  ["kappa", "0.02–0.3 scan", "Interfacial term; controls interface thickness and characteristic scale."],
-  ["N × N", "128 × 128", "Simulation grid; the parameter scan uses 64 × 64."],
-  ["dt", "0.5", "Time step used by the semi-implicit spectral solver."],
+import { Link } from "react-router-dom";
+
+const modelPages = [
+  {
+    eyebrow: "Part 01 · Condensate simulation",
+    heading: "How can condensates form, coarsen, and age?",
+    description:
+      "Cahn–Hilliard field simulations reproduce droplet formation, DNA cargo partitioning, and glassification-driven ageing probed by a virtual FRAP experiment — the quantitative core of NucleArk.",
+    path: "/model/condensate-simulation",
+    action: "Explore condensate simulation",
+  },
+  {
+    eyebrow: "Part 02 · Membrane / nuclear entry simulation",
+    heading: "Is nuclear enrichment phase-separation-mediated?",
+    description:
+      "Two-compartment models of membrane translocation and nuclear import ask how active NLS import and condensation acting as a passive sink combine — and design the blocking assay that discriminates between the two mechanisms.",
+    path: "/model/membrane-nuclear-entry",
+    action: "Explore entry simulations",
+  },
+  {
+    eyebrow: "Part 03 · Structure / binding prediction",
+    heading: "Which folds and interactions make the vessel work?",
+    description:
+      "Structure prediction and binding calculations on the zinc-finger-DNA interface, linker geometries, and fusion constructs quantify affinity and specificity before anything is ordered for the bench.",
+    path: "/model/structure-binding-prediction",
+    action: "Explore structure and binding",
+  },
+  {
+    eyebrow: "Part 04 · Sequence design",
+    heading: "A recognition sequence the human genome does not contain.",
+    description:
+      "A genome-scale census of 12-bp words yields a CpG-free tag more than 100× rarer than the original target, spelled out by a buildable four-finger array and compatible with common plasmid backbones.",
+    path: "/model/sequence-design",
+    action: "Explore sequence design",
+  },
 ];
 
 export function Model() {
   return (
     <>
       <section className="content-section narrow">
-        <p className="eyebrow">Dry lab · phase separation</p>
-        <h2>How can condensates form, coarsen, and age?</h2>
-        <p>We model condensate formation in a two-dimensional periodic domain with the Cahn–Hilliard equation and a symmetric double-well potential. A semi-implicit Fourier spectral method evolves the conserved concentration field while retaining mass conservation and a monotonic decrease in free energy.</p>
+        <p className="eyebrow">Dry lab · model</p>
+        <h2>A multi-scale look at the vessel.</h2>
+        <p>
+          Our modeling connects molecular-scale binding physics to whole-cell
+          delivery performance. It operates at two complementary levels —
+          field-level Cahn–Hilliard simulations of condensate formation and
+          ageing, and systems-level ODE and Boolean models of light-switch
+          dynamics and nuclear import — that share quantities and
+          cross-validate each other. The work is organized into the four
+          pages below.
+        </p>
       </section>
-      <section className="content-section row g-4">
-        <div className="col-md-4"><article className="info-card"><span>01</span><h3>Formation</h3><p>Small fluctuations grow into spinodal patterns and then separate into coexisting phases.</p></article></div>
-        <div className="col-md-4"><article className="info-card"><span>02</span><h3>Landscape</h3><p>A 10 × 10 scan across mean concentration and kappa compares final morphologies.</p></article></div>
-        <div className="col-md-4"><article className="info-card"><span>03</span><h3>Ageing</h3><p>A glassification factor is coupled to a virtual FRAP measurement of condensate mobility.</p></article></div>
-      </section>
-      <section className="content-section">
-        <p className="eyebrow">Numerical setup</p>
-        <div className="table-wrap"><table><thead><tr><th>Parameter</th><th>Value</th><th>Role</th></tr></thead><tbody>{parameterRows.map(([parameter, value, role]) => <tr key={parameter}><td>{parameter}</td><td>{value}</td><td>{role}</td></tr>)}</tbody></table></div>
-      </section>
-      <section className="content-section narrow">
-        <p className="eyebrow">Current findings</p>
-        <h2>Two routes to droplet formation.</h2>
-        <p>Across the scan, mean concentration changes the morphology from isolated droplets to bicontinuous structures, while kappa changes the interface and droplet scale. At mean = 0.1, the homogeneous state remains metastable under small perturbations; an added supercritical seed initiates nucleation and growth.</p>
-        <p>In the virtual FRAP experiment, coupling transport to glassification makes the half-recovery time increase with condensate age. The underlying data, figures, and code will be added after final review and upload through the iGEM asset system.</p>
-      </section>
+      {modelPages.map((page) => (
+        <section className="content-section narrow" key={page.path}>
+          <p className="eyebrow">{page.eyebrow}</p>
+          <h2>{page.heading}</h2>
+          <p>{page.description}</p>
+          <Link className="button-link" to={page.path}>
+            {page.action}
+          </Link>
+        </section>
+      ))}
     </>
   );
 }
+
