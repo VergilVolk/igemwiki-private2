@@ -1,13 +1,14 @@
 import {
   AlternativePlatform, Attributions, Contribution, Description, Education,
   Engineering, Entrepreneurship, Experiments, Hardware, Home, HumanPractices,
-  Inclusivity, Measurement, Members, Model, Notebook, Results,
-  SafetyAndSecurity, SequenceDesign, Software, Sustainability,
+  Inclusivity, Measurement, Members, Model, CondensateSimulation,
+  MembraneNuclearEntry, Notebook, Results, SafetyAndSecurity,
+  SequenceDesign, StructureBindingPrediction, Software, Sustainability,
 } from "./contents";
 
 interface Base { name: string | undefined; }
-class Folder implements Base { name: string | undefined; folder: Page[] | undefined; }
-class Page implements Base { name: string | undefined; title: string | undefined; path: string | undefined; component: React.FC | undefined; lead: string | undefined; }
+class Folder implements Base { name: string | undefined; folder: (Page | Folder)[] | undefined; }
+class Page implements Base { name: string | undefined; title: string | undefined; path: string | undefined; component: React.FC | undefined; lead: string | undefined; indent?: boolean | undefined; }
 
 const Pages: (Page | Folder)[] = [
   { name: "Home", title: "NucleArk", path: "/", component: Home, lead: "A nuclear delivery system based on phase-separating condensates." },
@@ -27,8 +28,11 @@ const Pages: (Page | Folder)[] = [
     { name: "Safety and Security", title: "Safety and security", path: "/safety-and-security", component: SafetyAndSecurity, lead: "" },
   ]},
   { name: "Dry Lab", folder: [
-    { name: "Model", title: "Model", path: "/model", component: Model, lead: "A computational study of condensate formation and ageing." },
-    { name: "Sequence Design", title: "Sequence design", path: "/sequence-design", component: SequenceDesign, lead: "A CpG-free DNA tag the human genome does not contain, and the four-finger array that reads it." },
+    { name: "Model", title: "Model", path: "/model", component: Model, lead: "A multi-scale modeling framework for NucleArk, from condensate physics to sequence design." },
+    { name: "Condensate Simulation", title: "Condensate simulation", path: "/model/condensate-simulation", component: CondensateSimulation, lead: "A computational study of condensate formation and ageing.", indent: true },
+    { name: "Membrane / Nuclear Entry", title: "Membrane / nuclear entry simulation", path: "/model/membrane-nuclear-entry", component: MembraneNuclearEntry, lead: "", indent: true },
+    { name: "Structure / Binding", title: "Structure / binding prediction", path: "/model/structure-binding-prediction", component: StructureBindingPrediction, lead: "", indent: true },
+    { name: "Sequence Design", title: "Sequence design", path: "/model/sequence-design", component: SequenceDesign, lead: "A CpG-free DNA tag the human genome does not contain, and the four-finger array that reads it.", indent: true },
     { name: "Software", title: "Software", path: "/software", component: Software, lead: "" },
     { name: "Hardware", title: "Hardware", path: "/hardware", component: Hardware, lead: "" },
   ]},
