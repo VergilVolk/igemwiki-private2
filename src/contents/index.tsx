@@ -21,9 +21,8 @@ export { SequenceDesign } from "./sequence-design.tsx";
 export { Software } from "./software.tsx";
 export { Hardware } from "./hardware.tsx";
 // Engagement
-export { Entrepreneurship } from "./entrepreneurship.tsx";
-export { HumanPractices } from "./human-practices.tsx";
-export { Education } from "./education.tsx";
+export { EngagementSummary } from "./engagement-summary.tsx";
+export { IntegratedHP } from "./integrated-hp.tsx";
 export { Inclusivity } from "./inclusivity.tsx";
-export { Sustainability } from "./sustainability.tsx";
+export { Collaboration } from "./collaboration.tsx";
 export { Attributions } from "./attributions.tsx";

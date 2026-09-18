@@ -1,6 +1,6 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Link, Route, Routes, useLocation } from "react-router-dom";
 import { getPathMapping, stringToSlug } from "../../utils";
 import { useEffect } from "react";
 import { Navbar } from "../../components/Navbar";
@@ -14,8 +14,14 @@ const pendingPaths = new Set([
   "/engineering", "/results", "/contribution", "/experiments", "/notebook",
   "/measurement", "/alternative-platform", "/safety-and-security", "/software",
   "/hardware", "/model/membrane-nuclear-entry",
-  "/model/structure-binding-prediction", "/entrepreneurship",
-  "/human-practices", "/education", "/inclusivity", "/sustainability",
+  "/model/structure-binding-prediction",
+]);
+
+// Wet-lab pages documenting how discussions with the PI shaped experimental
+// work. Each shows a link back to Integrated Human Practices, which documents
+// how dialogue reshaped the project itself (see /engagement/integrated-hp).
+const wetLabPaths = new Set([
+  "/experiments", "/notebook", "/measurement", "/alternative-platform",
 ]);
 
 const App = () => {
@@ -58,6 +64,16 @@ const App = () => {
                         {path === "/hardware" && (
                           <p className="text-center text-body-secondary mt-3">
                             Do we really have hardware ?
+                          </p>
+                        )}
+                        {wetLabPaths.has(path) && (
+                          <p className="text-center text-body-secondary mt-3">
+                            How these discussions reshaped the project itself is
+                            documented in{" "}
+                            <Link to="/engagement/integrated-hp">
+                              Integrated Human Practices
+                            </Link>
+                            .
                           </p>
                         )}
                       </SectionPending>

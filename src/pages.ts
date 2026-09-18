@@ -1,9 +1,9 @@
 import {
-  AlternativePlatform, Attributions, Contribution, Description, Education,
-  Engineering, Entrepreneurship, Experiments, Hardware, Home, HumanPractices,
-  Inclusivity, Measurement, Members, Model, CondensateSimulation,
+  AlternativePlatform, Attributions, Collaboration, Contribution, Description,
+  EngagementSummary, Engineering, Experiments, Hardware, Home, Inclusivity,
+  IntegratedHP, Measurement, Members, Model, CondensateSimulation,
   MembraneNuclearEntry, Notebook, Results, SafetyAndSecurity,
-  SequenceDesign, StructureBindingPrediction, Software, Sustainability,
+  SequenceDesign, StructureBindingPrediction, Software,
 } from "./contents";
 
 interface Base { name: string | undefined; }
@@ -37,11 +37,10 @@ const Pages: (Page | Folder)[] = [
     { name: "Hardware", title: "Hardware", path: "/hardware", component: Hardware, lead: "" },
   ]},
   { name: "Engagement", folder: [
-    { name: "Entrepreneurship", title: "Entrepreneurship", path: "/entrepreneurship", component: Entrepreneurship, lead: "" },
-    { name: "Human Practices", title: "Human practices", path: "/human-practices", component: HumanPractices, lead: "" },
-    { name: "Education", title: "Education", path: "/education", component: Education, lead: "" },
-    { name: "Diversity and Inclusion", title: "Diversity and inclusion", path: "/inclusivity", component: Inclusivity, lead: "" },
-    { name: "Sustainability", title: "Sustainability", path: "/sustainability", component: Sustainability, lead: "" },
+    { name: "Summary", title: "Engagement", path: "/engagement", component: EngagementSummary, lead: "How NucleArk reached beyond the bench — and what came back." },
+    { name: "Integrated HP", title: "Integrated human practices", path: "/engagement/integrated-hp", component: IntegratedHP, lead: "How conversations with our PI, advisors, and stakeholders reshaped the project — and where each change is documented." },
+    { name: "Inclusivity", title: "Inclusivity", path: "/engagement/inclusivity", component: Inclusivity, lead: "Lowering the barriers that keep people out of the scientific conversation." },
+    { name: "Collaboration", title: "Collaboration", path: "/engagement/collaboration", component: Collaboration, lead: "The exchanges, shared work, and partnerships behind NucleArk." },
   ]},
 ];
 
