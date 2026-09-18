@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom";
 import { HeroVideo } from "../components/HeroVideo";
-import nucleArkLogo from "../assets/nucleark-logo.png";
 
 const logoUrl =
   import.meta.env.VITE_TEAM_LOGO_URL ||
-  nucleArkLogo;
+  "https://static.igem.wiki/teams/6195/wiki/nucleark-logo.avif";
 
 export function Home() {
   return (
