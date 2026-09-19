@@ -66,3 +66,14 @@ tr:last-child td { border-bottom: 0; }
 .footer a:hover { color: #e0ab80; }
 @keyframes page-in { from { transform: translateY(22px); } to { transform: translateY(0); } }
 @media (max-width: 991px) { .page-hero { min-height: 280px; padding-top: 5rem; } .page-shell { padding-top: 3rem; } .home-page-shell { padding-top: 0; } .home-banner { min-height: 270px; padding: 3.5rem 2rem; } .home-banner-mark { right: -15%; width: 85%; opacity: .32; } }
+
+/* --- Condensate simulation page: subsection headings, equations, figure placeholders --- */
+.content-section .subsection { max-width: 850px; margin: 2.75rem 0 1.1rem; font-size: 1.45rem; font-weight: 750; letter-spacing: -.035em; }
+.content-section .math-block { max-width: 850px; margin: 1.4rem 0; padding: 1rem 1.35rem; border-left: 3px solid var(--rust); border-radius: .35rem; background: rgba(255,255,255,.75); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .95rem; line-height: 1.8; color: #24313c; overflow-x: auto; white-space: nowrap; }
+.figure-slot { margin: 1.6rem 0 0; padding: 2rem 1.7rem; border: 1.5px dashed var(--rust); border-radius: 1rem; background: rgba(255,255,255,.55); }
+.content-section .figure-slot .figure-tag { margin: 0 0 .75rem; color: var(--rust); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.content-section .figure-slot p { margin: .35rem 0; }
+.content-section .figure-slot .figure-source { font-size: .95rem; }
+.content-section .figure-slot .figure-source code { font-size: .85rem; word-break: break-all; }
+.content-section ol { margin: 1.35rem 0; padding-left: 1.5rem; }
+.content-section ol li { margin: .55rem 0; }
