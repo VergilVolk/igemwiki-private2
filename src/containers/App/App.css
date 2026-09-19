@@ -1,9 +1,9 @@
 :root { --ink: #182027; --muted: #66727f; --paper: #fbfaf6; --cream: #f2e6de; --rust: #b96d55; --teal: #1c7770; --deep: #123d43; --line: #d8ddd7; }
-body { padding-top: 72px; color: var(--ink); background: var(--paper); font-family: Arial, Helvetica, sans-serif; }
+body { padding-top: 88px; color: var(--ink); background: var(--paper); font-family: Arial, Helvetica, sans-serif; }
 a { color: inherit; }
-.site-nav { min-height: 72px; background: rgba(251,250,246,.94); border-bottom: 1px solid rgba(24,32,39,.12); backdrop-filter: blur(16px); }
+.site-nav { min-height: 88px; background: rgba(251,250,246,.94); border-bottom: 1px solid rgba(24,32,39,.12); backdrop-filter: blur(16px); }
 .navbar-brand { display: flex; align-items: center; gap: .65rem; font-size: 1.15rem; font-weight: 800; letter-spacing: -.04em; }
-.brand-logo { width: 108px; height: 58px; object-fit: contain; object-position: center; mix-blend-mode: multiply; }
+.brand-logo { width: 150px; height: 76px; object-fit: contain; object-position: center; mix-blend-mode: multiply; }
 .left-aligned { margin-left: auto; }
 .nav-link, .dropdown-item { font-size: .88rem; font-weight: 600; }
 .site-nav .dropdown-item.subpage-item { padding-left: 2.2rem; }
@@ -17,11 +17,11 @@ a { color: inherit; }
 .page-shell { min-height: 42vh; padding-top: 4.5rem; }
 .page-shell { animation: page-in .62s cubic-bezier(.22,.75,.25,1) both; }
 .home-page-shell { padding-top: 0; }
-.home-banner { position: relative; min-height: 310px; margin: 0 0 4.5rem; padding: 4.8rem max(5.5rem, calc((100vw - 1296px) / 2 + 1.5rem)); overflow: hidden; color: #fff; background: linear-gradient(120deg, var(--deep), var(--teal)); }
+.home-banner { position: relative; min-height: 350px; margin: 0 0 4.5rem; padding: 4.8rem max(5.5rem, calc((100vw - 1296px) / 2 + 1.5rem)); overflow: hidden; color: #fff; background: linear-gradient(120deg, var(--deep), var(--teal)); }
 .home-banner .eyebrow { color: #d3e4c9; }
 .home-banner h1 { position: relative; z-index: 1; margin: 0; font-size: clamp(4rem, 10vw, 8rem); font-weight: 800; letter-spacing: -.08em; line-height: .82; }
 .home-banner > p:not(.eyebrow) { position: relative; z-index: 1; max-width: 510px; margin: 1.5rem 0 0; color: rgba(255,255,255,.78); font-size: 1.08rem; line-height: 1.6; }
-.home-banner-mark { position: absolute; right: 2%; bottom: 5%; width: min(600px, 48%); height: 250px; object-fit: contain; object-position: center; filter: grayscale(1) invert(1); mix-blend-mode: screen; opacity: .54; }
+.home-banner-mark { position: absolute; right: 0; bottom: 3%; width: min(760px, 58%); height: 305px; object-fit: contain; object-position: center; filter: grayscale(1) invert(1); mix-blend-mode: screen; opacity: .62; }
 .home-content { padding-top: 0; }
 .home-intro { min-height: 440px; }
 .home-intro h2, .content-section h2, .section-pending h2 { max-width: 760px; font-size: clamp(2.25rem, 4vw, 4.2rem); font-weight: 800; letter-spacing: -.06em; line-height: .98; }
@@ -65,7 +65,7 @@ tr:last-child td { border-bottom: 0; }
 .footer a { color: #fff; font-weight: 700; text-decoration: none; }
 .footer a:hover { color: #e0ab80; }
 @keyframes page-in { from { transform: translateY(22px); } to { transform: translateY(0); } }
-@media (max-width: 991px) { .page-hero { min-height: 280px; padding-top: 5rem; } .page-shell { padding-top: 3rem; } .home-page-shell { padding-top: 0; } .home-banner { min-height: 270px; padding: 3.5rem 2rem; } .home-banner-mark { right: -10%; width: 88%; height: 210px; opacity: .32; } }
+@media (max-width: 991px) { body { padding-top: 76px; } .site-nav { min-height: 76px; } .brand-logo { width: 132px; height: 66px; } .page-hero { min-height: 280px; padding-top: 5rem; } .page-shell { padding-top: 3rem; } .home-page-shell { padding-top: 0; } .home-banner { min-height: 300px; padding: 3.5rem 2rem; } .home-banner-mark { right: -7%; width: 95%; height: 240px; opacity: .38; } }
 
 /* --- Condensate simulation page: subsection headings, equations, figure placeholders --- */
 .content-section .subsection { max-width: 850px; margin: 2.75rem 0 1.1rem; font-size: 1.45rem; font-weight: 750; letter-spacing: -.035em; }
