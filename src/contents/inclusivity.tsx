@@ -1,59 +1,59 @@
-import { Inspirations, InspirationLink } from "../components/Inspirations";
-
 export function Inclusivity() {
-  const links: InspirationLink[] = [
-    { year: 2025, teamName: "USP-Brazil", pageName: "inclusivity" },
-    { year: 2025, teamName: "SUSTech-BIO", pageName: "inclusivity" },
-    { year: 2025, teamName: "DBHS-CA", pageName: "inclusivity" },
-    { year: 2025, teamName: "Fudan", pageName: "inclusivity" },
-    { year: 2025, teamName: "Technion-Israel", pageName: "inclusivity" },
-    { year: 2025, teamName: "Thessaloniki", pageName: "inclusivity" },
-  ];
-
   return (
     <>
-      <div className="row mt-4">
-        <div className="col">
-          <div className="bd-callout bd-callout-info">
-            <h4>Inclusivity Award</h4>
+      <section className="content-section narrow">
+        <p className="eyebrow">Engagement · Inclusivity</p>
+        <h2>Who gets a voice in the conversation?</h2>
+        <p>
+          A condensate only works because many weak interactions add up — and
+          so does a community. Inclusivity, for us, means actively removing
+          the barriers that keep people out of science: making our materials
+          legible to non-specialists, opening our activities to audiences
+          beyond the campus, and making sure the perspectives that shape a
+          project are not all drawn from the same room.
+        </p>
+      </section>
+      <section className="content-section row g-4">
+        <div className="col-md-4">
+          <article className="info-card">
+            <span>01</span>
+            <h3>Accessible communication</h3>
             <p>
-              This award recognizes exceptional efforts to include people with
-              diverse identities in scientific research. Who gets a voice in
-              iGEM, synthetic biology, and science more broadly? How have you
-              created new opportunities to remove barriers and let more people
-              contribute, participate, or be represented? Activities do not have
-              to relate directly to your team's project. Document your approach,
-              how you improved inclusivity, and what was learned.
+              Plain-language versions of the project story, so a
+              non-specialist audience can follow — and question — the science.
             </p>
-            <hr />
+          </article>
+        </div>
+        <div className="col-md-4">
+          <article className="info-card">
+            <span>02</span>
+            <h3>Broadened participation</h3>
             <p>
-              Visit the{" "}
-              <a href="https://competition.igem.org/judging/awards/special">
-                Special Awards page
-              </a>{" "}
-              for more information.
+              Activities designed to be joinable regardless of background,
+              training, or proximity to a laboratory.
             </p>
-          </div>
+          </article>
         </div>
-      </div>
-
-      <div className="row mt-4">
-        <div className="col-lg-8">
-          <h2>Overview</h2>
-          <hr />
-          <p>
-            We should all recognize the importance of building an open and
-            welcoming scientific community. A more diverse community involved in
-            creating knowledge and technology is more likely to produce a more
-            equitable and representative system. Every individual, regardless of
-            background or experience, should have an equal opportunity to engage
-            with scientific knowledge and technological development. Everyone
-            should be able to share their opinions on the societal implications
-            of research.
-          </p>
+        <div className="col-md-4">
+          <article className="info-card">
+            <span>03</span>
+            <h3>Diverse perspectives</h3>
+            <p>
+              Seeking voices beyond the lab when judging the social
+              implications of the project, not only after the work is done.
+            </p>
+          </article>
         </div>
-        <Inspirations inspirationLinkList={links} />
-      </div>
+      </section>
+      <section className="section-pending">
+        <p className="eyebrow">Activity log</p>
+        <h2>Inclusivity records are being collected.</h2>
+        <p>
+          Each activity will be documented with its audience, the barriers it
+          addressed, and what we learned from the people who took part.
+        </p>
+      </section>
     </>
   );
 }
+
