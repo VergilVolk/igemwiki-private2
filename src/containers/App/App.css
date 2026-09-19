@@ -3,7 +3,7 @@ body { padding-top: 72px; color: var(--ink); background: var(--paper); font-fami
 a { color: inherit; }
 .site-nav { min-height: 72px; background: rgba(251,250,246,.94); border-bottom: 1px solid rgba(24,32,39,.12); backdrop-filter: blur(16px); }
 .navbar-brand { display: flex; align-items: center; gap: .65rem; font-size: 1.15rem; font-weight: 800; letter-spacing: -.04em; }
-.brand-logo { width: 178px; height: 44px; object-fit: cover; object-position: center; mix-blend-mode: multiply; }
+.brand-logo { width: 108px; height: 58px; object-fit: contain; object-position: center; mix-blend-mode: multiply; }
 .left-aligned { margin-left: auto; }
 .nav-link, .dropdown-item { font-size: .88rem; font-weight: 600; }
 .site-nav .dropdown-item.subpage-item { padding-left: 2.2rem; }
@@ -21,7 +21,7 @@ a { color: inherit; }
 .home-banner .eyebrow { color: #d3e4c9; }
 .home-banner h1 { position: relative; z-index: 1; margin: 0; font-size: clamp(4rem, 10vw, 8rem); font-weight: 800; letter-spacing: -.08em; line-height: .82; }
 .home-banner > p:not(.eyebrow) { position: relative; z-index: 1; max-width: 510px; margin: 1.5rem 0 0; color: rgba(255,255,255,.78); font-size: 1.08rem; line-height: 1.6; }
-.home-banner-mark { position: absolute; right: -3%; bottom: 10%; width: min(560px, 55%); height: 150px; object-fit: cover; object-position: center; filter: grayscale(1) invert(1); mix-blend-mode: screen; opacity: .54; }
+.home-banner-mark { position: absolute; right: 2%; bottom: 5%; width: min(600px, 48%); height: 250px; object-fit: contain; object-position: center; filter: grayscale(1) invert(1); mix-blend-mode: screen; opacity: .54; }
 .home-content { padding-top: 0; }
 .home-intro { min-height: 440px; }
 .home-intro h2, .content-section h2, .section-pending h2 { max-width: 760px; font-size: clamp(2.25rem, 4vw, 4.2rem); font-weight: 800; letter-spacing: -.06em; line-height: .98; }
@@ -65,7 +65,7 @@ tr:last-child td { border-bottom: 0; }
 .footer a { color: #fff; font-weight: 700; text-decoration: none; }
 .footer a:hover { color: #e0ab80; }
 @keyframes page-in { from { transform: translateY(22px); } to { transform: translateY(0); } }
-@media (max-width: 991px) { .page-hero { min-height: 280px; padding-top: 5rem; } .page-shell { padding-top: 3rem; } .home-page-shell { padding-top: 0; } .home-banner { min-height: 270px; padding: 3.5rem 2rem; } .home-banner-mark { right: -15%; width: 85%; opacity: .32; } }
+@media (max-width: 991px) { .page-hero { min-height: 280px; padding-top: 5rem; } .page-shell { padding-top: 3rem; } .home-page-shell { padding-top: 0; } .home-banner { min-height: 270px; padding: 3.5rem 2rem; } .home-banner-mark { right: -10%; width: 88%; height: 210px; opacity: .32; } }
 
 /* --- Condensate simulation page: subsection headings, equations, figure placeholders --- */
 .content-section .subsection { max-width: 850px; margin: 2.75rem 0 1.1rem; font-size: 1.45rem; font-weight: 750; letter-spacing: -.035em; }
@@ -75,5 +75,13 @@ tr:last-child td { border-bottom: 0; }
 .content-section .figure-slot p { margin: .35rem 0; }
 .content-section .figure-slot .figure-source { font-size: .95rem; }
 .content-section .figure-slot .figure-source code { font-size: .85rem; word-break: break-all; }
+.figure-media { margin: 1.6rem 0; overflow: hidden; border: 1px solid var(--line); border-radius: 1rem; background: #fff; }
+.figure-media img { display: block; width: 100%; height: auto; background: var(--cream); }
+.figure-media figcaption { padding: .9rem 1.15rem 1.1rem; color: var(--muted); line-height: 1.55; }
+.figure-media figcaption span { display: block; margin-bottom: .35rem; color: var(--rust); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .74rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.context-links { display: flex; flex-wrap: wrap; gap: .6rem 1rem; align-items: center; margin: 1.6rem 0 0; padding: 1rem 1.15rem; border-left: 3px solid var(--teal); background: rgba(28,119,112,.07); }
+.context-links p { width: 100%; margin: 0; color: var(--ink); font-size: .78rem; font-weight: 750; letter-spacing: .1em; text-transform: uppercase; }
+.context-links a { color: var(--teal); font-weight: 750; text-decoration: none; }
+.context-links a:hover { color: var(--rust); text-decoration: underline; }
 .content-section ol { margin: 1.35rem 0; padding-left: 1.5rem; }
 .content-section ol li { margin: .55rem 0; }

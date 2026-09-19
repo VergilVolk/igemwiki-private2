@@ -36,8 +36,8 @@ const Pages: (Page | Folder)[] = [
     { name: "Software", title: "Software", path: "/software", component: Software, lead: "" },
     { name: "Hardware", title: "Hardware", path: "/hardware", component: Hardware, lead: "" },
   ]},
-  { name: "Engagement", folder: [
-    { name: "Summary", title: "Engagement", path: "/engagement", component: EngagementSummary, lead: "How NucleArk reached beyond the bench — and what came back." },
+  { name: "Human Practices", folder: [
+    { name: "Summary", title: "Human Practices", path: "/engagement", component: EngagementSummary, lead: "How NucleArk reached beyond the bench — and what came back." },
     { name: "Integrated HP", title: "Integrated human practices", path: "/engagement/integrated-hp", component: IntegratedHP, lead: "How conversations with our PI, advisors, and stakeholders reshaped the project — and where each change is documented." },
     { name: "Inclusivity", title: "Inclusivity", path: "/engagement/inclusivity", component: Inclusivity, lead: "Lowering the barriers that keep people out of the scientific conversation." },
     { name: "Collaboration", title: "Collaboration", path: "/engagement/collaboration", component: Collaboration, lead: "The exchanges, shared work, and partnerships behind NucleArk." },

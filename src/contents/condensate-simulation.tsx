@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 // Page: Dry Lab > Model > Part 01 · Condensate simulation
 // Content transcribed from condensate_page.md — the integration of the
 // condensate/ (Cahn-Hilliard field simulations) and THUiGEM_modeling/
@@ -230,7 +232,7 @@ export function CondensateSimulation() {
         <p className="eyebrow">Simulation 1 · Formation and coarsening</p>
         <h2>From uniform noise to discrete droplets.</h2>
         <p>Starting from a uniform field plus 0.1-amplitude Gaussian noise (mean = 0.5, i.e. φ ≈ 0.33), the simulation shows the full life cycle of a condensate population: the homogeneous state is unstable, small random fluctuations amplify into a mottled spinodal pattern, which breaks up into discrete droplets that then coarsen — small droplets shrink and disappear while large ones grow (Ostwald ripening), occasionally merging.</p>
-        <FigureSlot id="1" source="condensate/formation.gif (≈24 MB — compress or convert to video before upload)" caption="Time-lapse movie of the concentration field evolving from uniform noise to phase-separated, coarsening droplets. The GIF samples time with a log+linear hybrid scheme, so both the early developing phase and late coarsening / merging events are visible." />
+        <FigureSlot id="1" source="condensate/droplets.gif" caption="Time-lapse of the concentration field evolving from uniform noise to phase-separated, coarsening droplets. Upload this GIF through iGEM Uploads, then replace this slot with its static.igem.wiki address." />
         <p>The time series written to droplet_rt.csv (columns t, R_mean, n_droplets, free_energy, mass_drift) confirms the movie quantitatively: the free energy decreases monotonically, the droplet count falls as the mean radius grows, and the mass drift stays at machine precision (~10⁻¹⁶) — the signatures of a well-resolved, conservative phase-separation dynamics. The mean droplet radius follows the classic coarsening expectation ⟨R⟩ ~ t^(1/3), so most structural change happens early and the late-time morphology evolves only gradually.</p>
         <p><strong>How this guides the wet lab.</strong> The simulation sets expectations for the microscope: after blue-light activation, texture should appear within the early spinodal window, droplets should be visible as discrete objects soon after, and their number should slowly decrease as they mature. It also defines the maturation timescale over which any ageing measurement (Simulation 5) should be scheduled.</p>
       </section>
@@ -240,6 +242,7 @@ export function CondensateSimulation() {
         <p>Expression level is the one knob the wet lab controls most directly. To map it onto morphology, we fixed every CH parameter and scanned the initial mean concentration from 0.05 to 1.60 in steps of 0.05 (extended to 2.00 for the area analysis); each run was evolved for 10 000 steps from a random initial field, then scored on final-state droplet count (threshold m₀) and two-phase area statistics.</p>
         <FigureSlot id="2" source="condensate/fig_of_phase/condensate_phase.png" caption="Final droplet count versus initial mean concentration, with a grey dashed marker at mean = 1.0 where the bicontinuous transition and phase inversion occur." />
         <FigureSlot id="3" source="condensate/fig_of_phase/condensate_area.png" caption="Two-phase area balance versus initial mean concentration; theory predicts the imbalance Δf = |2φ − 1| = 2·|mean − 1|/3, extremal at mean = 1 where the two phases are present in equal measure. (Read with the code's phase-equality convention, which peaks at mean = 1.)" />
+        <FigureSlot id="parameter sweep" source="condensate/sweep_mean_kappa_long.gif" caption="A visual sweep across mean concentration and κ, showing how the model morphology changes across the parameter landscape. Upload through iGEM Uploads, then replace this slot with its static.igem.wiki address." />
       </section>
       <section className="content-section">
         <p className="eyebrow">Four regimes</p>
@@ -414,6 +417,11 @@ export function CondensateSimulation() {
         <DataTable head={["Model finding", "Where", "Design guidance delivered"]} rows={conclusionRows} />
         <p><strong>Where this page sits in the modeling story.</strong> The condensate simulations described here are Part 01 of the model section. The systems-level framework's fourth module — the two-compartment nuclear-import model with the four-group blocking assay (±NLS × ±inhibitor, predicting near-zero nuclear enrichment only when both NLS is absent and pores are blocked) — is presented on the Membrane / Nuclear Entry Simulation page together with the delivery-side models; structure / binding prediction and sequence design have their own pages.</p>
         <p><strong>What remains for the loop to close.</strong> All kinetic parameters are currently literature-anchored or dimensionless simulation values. The wet-lab data streams specified above — light-on / light-off fluorescence time courses, FRAP at scheduled ages, titration series — will be fitted into fitted_params.json, after which every simulation and the protocol recommendation regenerate automatically with calibrated numbers.</p>
+        <aside className="context-links">
+          <p>Related validation</p>
+          <Link to="/experiments">Go to Wet Lab · Experiments</Link>
+          <Link to="/measurement">Go to Wet Lab · Measurement</Link>
+        </aside>
       </section>
       <section className="content-section narrow">
         <p className="eyebrow">References</p>

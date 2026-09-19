@@ -67,14 +67,15 @@ const App = () => {
                           </p>
                         )}
                         {wetLabPaths.has(path) && (
-                          <p className="text-center text-body-secondary mt-3">
-                            How these discussions reshaped the project itself is
-                            documented in{" "}
-                            <Link to="/engagement/integrated-hp">
-                              Integrated Human Practices
+                          <div className="context-links">
+                            <p>Related reading</p>
+                            <Link to="/model/condensate-simulation">
+                              Return to Dry Lab · Condensate Simulation
                             </Link>
-                            .
-                          </p>
+                            <Link to="/engagement/integrated-hp">
+                              Read Human Practices · Integrated HP
+                            </Link>
+                          </div>
                         )}
                       </SectionPending>
                     ) : (
