@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import dropletsGif from "../assets/droplets2.gif";
-import sweepMeanKappaGif from "../assets/sweep-mean-kappa2.gif";
+import dropletsGif from "../assets/droplets3.gif";
+import sweepMeanKappaGif from "../assets/sweep-mean-kappa3.gif";
 
 // Page: Dry Lab > Model > Part 01 · Condensate simulation
 // Content transcribed from condensate_page.md — the integration of the
