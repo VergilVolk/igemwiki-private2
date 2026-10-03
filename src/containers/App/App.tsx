@@ -11,10 +11,9 @@ import { SectionPending } from "../../components/SectionPending";
 import { ScrollToTop } from "../../components/ScrollToTop";
 
 const pendingPaths = new Set([
-  "/engineering", "/results", "/contribution", "/experiments", "/notebook",
+  "/results", "/contribution", "/experiments", "/notebook",
   "/measurement", "/alternative-platform", "/safety-and-security", "/software",
-  "/hardware", "/model/membrane-nuclear-entry",
-  "/model/structure-binding-prediction",
+  "/hardware", "/model/structure-binding-prediction",
 ]);
 
 // Wet-lab pages documenting how discussions with the PI shaped experimental

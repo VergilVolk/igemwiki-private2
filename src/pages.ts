@@ -16,7 +16,7 @@ const Pages: (Page | Folder)[] = [
   { name: "Attributions", title: "Attributions", path: "/attributions", component: Attributions, lead: "A transparent record of project contributions." },
   { name: "Project", folder: [
     { name: "Description", title: "Project description", path: "/description", component: Description, lead: "The design premise behind NucleArk." },
-    { name: "Engineering", title: "Engineering", path: "/engineering", component: Engineering, lead: "" },
+    { name: "Engineering", title: "Engineering", path: "/engineering", component: Engineering, lead: "One full DBTL cycle on the bench: from inclusion bodies to a purified, phase-separating fusion protein." },
     { name: "Results", title: "Results", path: "/results", component: Results, lead: "" },
     { name: "Contribution", title: "Contribution", path: "/contribution", component: Contribution, lead: "" },
   ]},
@@ -30,7 +30,7 @@ const Pages: (Page | Folder)[] = [
   { name: "Dry Lab", folder: [
     { name: "Model", title: "Model", path: "/model", component: Model, lead: "A multi-scale modeling framework for NucleArk, from condensate physics to sequence design." },
     { name: "Condensate Simulation", title: "Condensate simulation", path: "/model/condensate-simulation", component: CondensateSimulation, lead: "Field-level Cahn-Hilliard simulations and systems-level ODE / Boolean models of the light-gated condensate: formation, cargo loading, ageing, and light control.", indent: true },
-    { name: "Membrane / Nuclear Entry", title: "Membrane / nuclear entry simulation", path: "/model/membrane-nuclear-entry", component: MembraneNuclearEntry, lead: "", indent: true },
+    { name: "Membrane / Nuclear Entry", title: "Membrane / nuclear entry simulation", path: "/model/membrane-nuclear-entry", component: MembraneNuclearEntry, lead: "Two serial kinetic models — adsorption and wrapping at the cell membrane, then trapping, partitioning, and release at the nuclear pore — chained into one falsifiable nuclear-entry efficiency.", indent: true },
     { name: "Structure / Binding", title: "Structure / binding prediction", path: "/model/structure-binding-prediction", component: StructureBindingPrediction, lead: "", indent: true },
     { name: "Sequence Design", title: "Sequence design", path: "/model/sequence-design", component: SequenceDesign, lead: "A CpG-free DNA tag the human genome does not contain, and the four-finger array that reads it.", indent: true },
     { name: "Software", title: "Software", path: "/software", component: Software, lead: "" },
