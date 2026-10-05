@@ -3,7 +3,7 @@ body { padding-top: 88px; color: var(--ink); background: var(--paper); font-fami
 a { color: inherit; }
 .site-nav { min-height: 88px; background: rgba(251,250,246,.94); border-bottom: 1px solid rgba(24,32,39,.12); backdrop-filter: blur(16px); }
 .navbar-brand { display: flex; align-items: center; gap: .65rem; font-size: 1.15rem; font-weight: 800; letter-spacing: -.04em; }
-.brand-logo { width: 150px; height: 76px; object-fit: contain; object-position: center; mix-blend-mode: multiply; }
+.brand-logo { width: 150px; height: 76px; object-fit: contain; object-position: center; }
 .left-aligned { margin-left: auto; }
 .nav-link, .dropdown-item { font-size: .88rem; font-weight: 600; }
 .site-nav .dropdown-item.subpage-item { padding-left: 2.2rem; }

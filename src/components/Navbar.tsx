@@ -4,14 +4,12 @@ import BootstrapNavbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { Link } from "react-router-dom";
 import Pages from "../pages.ts";
-import nucleArkLogo from "../assets/nucleark-logo-original.jpg";
 
 type NavItem = (typeof Pages)[number];
 
 export function Navbar() {
-  const logoUrl =
-    import.meta.env.VITE_TEAM_LOGO_URL ||
-    nucleArkLogo;
+  // Logo is served from static.igem.wiki via the iGEM uploads tool (see .env).
+  const logoUrl = import.meta.env.VITE_TEAM_LOGO_URL;
 
   // Renders folder entries (pages and nested folders) inside a dropdown menu.
   const renderFolderItems = (

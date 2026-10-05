@@ -2,11 +2,9 @@ import { Link } from "react-router-dom";
 import { HeroVideo } from "../components/HeroVideo";
 import { UploadFigure } from "../components/UploadFigure";
 import { UPLOADS } from "../uploads";
-import nucleArkLogo from "../assets/nucleark-logo-original.jpg";
 
-const logoUrl =
-  import.meta.env.VITE_TEAM_LOGO_URL ||
-  nucleArkLogo;
+// Logo is served from static.igem.wiki via the iGEM uploads tool (see .env).
+const logoUrl = import.meta.env.VITE_TEAM_LOGO_URL;
 
 // Official project description, as registered with iGEM. Do not paraphrase.
 const OFFICIAL_TITLE =
@@ -90,7 +88,7 @@ export function Home() {
         <p className="eyebrow">Tsinghua iGEM 2026</p>
         <h1>NucleArk</h1>
         <p>A nuclear delivery system based on phase-separating condensates.</p>
-        <img className="home-banner-mark" src={logoUrl} alt="NucleArk logo" />
+        {logoUrl && <img className="home-banner-mark" src={logoUrl} alt="NucleArk logo" />}
       </section>
       <div className="container home-content">
         <section className="home-intro row align-items-center g-5">
