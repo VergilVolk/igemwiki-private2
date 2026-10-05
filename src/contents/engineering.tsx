@@ -1,10 +1,15 @@
 // Page: Project > Engineering
-// Content transcribed from the team's wet-lab DBTL record (src/1002/wet 循环.docx):
-// cycle 1 = prokaryotic expression & purification of the light-gated fusion
-// protein. Numbers are copied verbatim from the lab record; every <FigureSlot>
-// marks a planned image position (to be uploaded through the iGEM asset system).
+// Content transcribed from the team's wet-lab DBTL record (src/1002/wet 循环.docx,
+// 2026-09-30 revision): cycle 1 = prokaryotic expression & purification of the
+// light-gated fusion protein. Numbers are copied verbatim from the lab record.
+// Figures are rendered through UploadFigure: per iGEM policy every image is
+// uploaded through the official uploads tool and referenced by its returned
+// static.igem.wiki URL (filled in src/uploads.ts) — images are never bundled
+// from src/. Entries without a URL yet show an upload placeholder.
 
 import { Link } from "react-router-dom";
+import { UPLOADS } from "../uploads";
+import { UploadFigure } from "../components/UploadFigure";
 
 type Row = string[];
 
@@ -90,7 +95,7 @@ export function Engineering() {
         <p className="eyebrow">Iteration 1 · Design</p>
         <h2>The initial construct.</h2>
         <p>The CDS of pcDNA3.1_mCherry-CRY2-ePDZ-L(-2)-LOVpep was codon-optimized for bacterial expression. The N terminus carries a triplicated nuclear localization signal (3×NLS) and the zinc-finger cargo-binding element (ZF). The gene was cloned into pET-15b so that the N terminus also carries a 6×His tag for nickel-column purification. Long flexible linkers were placed between the elements so that each keeps folding independently.</p>
-        <FigureSlot id="E1" source="pending upload · structure prediction of the fusion construct" caption="Structure prediction of the fusion protein, highlighting the long flexible linkers left between elements to preserve independent folding." />
+        <UploadFigure id="32" url={UPLOADS.wetConstructPrediction} label="Figure 32 · Structure prediction" caption="Structure prediction of the fusion protein: element layout along the chain, with long flexible linkers between elements to preserve independent folding." />
         <h3 className="subsection">Five restriction-editing designs</h3>
         <p>To allow later edits of the key innovative elements without rebuilding from scratch, five enzyme-cut designs were specified up front:</p>
         <DataTable head={["Design", "Enzyme(s)", "Strategy", "Edit result", "Use"]} rows={editDesigns} />
@@ -101,7 +106,7 @@ export function Engineering() {
         <p>The first construct was assembled to the design above and tested straight away for expression:</p>
         <DataTable head={["Step", "Condition", "Note"]} rows={inductionRows} />
         <p>In both BL21 and DH5α the protein was expressed, but the mCherry fluorescence — the readout for correctly folded fusion protein — concentrated in the lysis pellet. Misfolded protein was forming inclusion bodies.</p>
-        <FigureSlot id="E2" source="pending upload · induction record (pellet vs supernatant fluorescence)" caption="Pellet and supernatant after lysis: red fluorescence concentrates in the pellet, indicating inclusion-body formation." />
+        <FigureSlot id="33" source="pending upload · induction record (pellet vs supernatant fluorescence)" caption="Pellet and supernatant after lysis: red fluorescence concentrates in the pellet, indicating inclusion-body formation." />
       </section>
       <section className="content-section narrow">
         <p className="eyebrow">Iteration 1 · Learn</p>
@@ -125,15 +130,17 @@ export function Engineering() {
         <p className="eyebrow">Iteration 3 · Design</p>
         <h2>An MBP fusion with three protease exits.</h2>
         <p>The construct was moved onto the MBP-fusion vector pMAL-c5x. Three protease sites were designed in, so the fusion can be taken apart to three different depths depending on what an assay needs:</p>
+        <UploadFigure id="34" url={UPLOADS.wetPmalDesign} label="Figure 34 · pMAL-c5x construct" caption="The pMAL-c5x MBP-fusion construct map carrying the NucleArk fusion protein." />
+        <UploadFigure id="35" url={UPLOADS.wetProteaseScheme} label="Figure 35 · Protease-site architecture" caption="Protein-level editing design: Factor Xa, Thrombin, and TEV sites divide the fusion into removable layers." />
         <DataTable head={["Site", "Removes", "Purpose"]} rows={proteaseRows} />
       </section>
       <section className="content-section narrow">
         <p className="eyebrow">Iteration 3 · Build / Test</p>
         <h2>A single fraction — and a surprise in the gel.</h2>
         <p>The new plasmid was constructed externally (outsourced), and the purification workflow was run across a screen of conditions.</p>
-        <FigureSlot id="E3" source="pending upload · purification condition screen" caption="Purification dataset across the screened expression and Ni-column conditions; the optimal condition set was selected from this screen." />
+        <FigureSlot id="36" source="pending upload · purification condition screen" caption="Purification dataset across the screened expression and Ni-column conditions; the optimal condition set was selected from this screen." />
         <p>The screen produced an optimal condition set. However, SDS-PAGE showed considerable cleavage at the junctions between elements, so the preparation was polished by size-exclusion chromatography to obtain a single component.</p>
-        <FigureSlot id="E4" source="pending upload · SEC chromatogram and SDS-PAGE" caption="Size-exclusion chromatogram and gel: the linker-cleavage fragments are removed, yielding a single fraction." />
+        <UploadFigure id="37" url={UPLOADS.wetSecGel} label="Figure 37 · Purification record" caption="Gel record of the preparation: cleavage fragments at the inter-element linkers appear on SDS-PAGE, and size-exclusion chromatography yields a single component." />
       </section>
       <section className="content-section narrow">
         <p className="eyebrow">Iteration 3 · Learn</p>
@@ -145,7 +152,7 @@ export function Engineering() {
         <p className="eyebrow">Parallel edit · cargo-binding control</p>
         <h2>Removing the zinc finger.</h2>
         <p>On the nucleic-acid level, design B from the editing table was executed: KpnI single digestion followed by vector self-ligation removes the ZF element, producing the no-cargo-binding control. Under the confocal microscope the modified system still phase-separates, and the wild-type construct binds the nucleic-acid cargo as designed.</p>
-        <FigureSlot id="E5" source="pending upload · confocal record" caption="Confocal microscopy: phase separation is preserved, and cargo nucleic acid is bound by the ZF-carrying construct." />
+        <UploadFigure id="38" url={UPLOADS.wetConfocal} label="Figure 38 · Confocal record" caption="Confocal microscopy: phase separation is preserved, and cargo nucleic acid is bound by the ZF-carrying construct." />
         <aside className="context-links">
           <p>Related reading</p>
           <Link to="/engagement/integrated-hp">

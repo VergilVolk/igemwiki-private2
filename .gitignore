@@ -13,6 +13,10 @@ dist
 dist-ssr
 *.local
 
+# Images waiting to be uploaded to static.igem.wiki via the iGEM uploads tool.
+# Never bundled into the site and never committed.
+uploads-staging/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
