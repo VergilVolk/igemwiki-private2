@@ -10,12 +10,13 @@
 // Source files waiting for upload are collected in uploads-staging/ (never
 // bundled into the site — bundling images in src/ is not allowed).
 export const UPLOADS = {
-  // Wet-lab engineering cycle (staged in uploads-staging/wet-cycle/)
-  wetConstructPrediction: "", // Figure 32 · D1.1 structure prediction
-  wetPmalDesign: "",          // Figure 34 · pMAL-c5x construct map
-  wetProteaseScheme: "",      // Figure 35 · protease-site architecture
-  wetSecGel: "",              // Figure 37 · purification / gel record
-  wetConfocal: "",            // Figure 38 · confocal record
+  // Wet-lab engineering cycle (uploaded to static.igem.wiki 2026-10)
+  // File 4 is reserved for the pending purification-dataset figure (Figure 36).
+  wetConstructPrediction: "https://static.igem.wiki/teams/6195/wiki/wiki-wetfig/1.avif", // Figure 32 · D1.1 structure prediction
+  wetPmalDesign: "https://static.igem.wiki/teams/6195/wiki/wiki-wetfig/2.avif",          // Figure 34 · pMAL-c5x construct map
+  wetProteaseScheme: "https://static.igem.wiki/teams/6195/wiki/wiki-wetfig/3.avif",      // Figure 35 · protease-site architecture
+  wetSecGel: "https://static.igem.wiki/teams/6195/wiki/wiki-wetfig/5.avif",              // Figure 37 · purification / gel record
+  wetConfocal: "https://static.igem.wiki/teams/6195/wiki/wiki-wetfig/6.avif",            // Figure 38 · confocal record
 
   // Official graphics
   villageFoundationalAdvance: "", // Figure 39 · official Foundational Advance village graphic
